@@ -3,9 +3,9 @@ name: Node.js Batch Runner
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/3 * * * *'
-    # - cron: '0 * * * *'
-    # - cron: '30 * * * *'
+    # - cron: '*/3 * * * *'
+    - cron: '0 * * * *'
+    - cron: '30 * * * *'
 
 jobs:
   build-and-run:
@@ -22,13 +22,13 @@ jobs:
       run: npm install
       working-directory: app
 
-    # - name: Wait for a random duration
-    #   run: |
-    #     if [[ $(( $(date +%s) % 3600 )) -lt 1800 ]]; then
-    #       sleep $[ ( $RANDOM % 601 ) + 3300 ]
-    #     else
-    #       sleep $[ ( $RANDOM % 301 ) + 1500 ]
-    #     fi
+    - name: Wait for a random duration
+      run: |
+        if [[ $(( $(date +%s) % 3600 )) -lt 1800 ]]; then
+          sleep $[ ( $RANDOM % 601 ) + 3300 ]
+        else
+          sleep $[ ( $RANDOM % 301 ) + 1500 ]
+        fi
 
     - name: Run index.js
       run: node index.js

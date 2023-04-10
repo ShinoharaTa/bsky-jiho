@@ -32,7 +32,7 @@ const post = async function (text) {
 const result = await login();
 if (result) {
     let time = moment().format('YYYY/MM/DD HH:mm:ss');
-    console.log(self.handle);
-    console.log("なう(" + time + ")");
-    // post("なう(" + time + ")");
+    // console.log(self.handle);
+    // console.log("なう(" + time + ")");
+    post("なう(" + time + ")");
 }
