@@ -1,5 +1,5 @@
 import bsky from '@atproto/api'
-import moment from "moment"
+import moment from "moment-timezone"
 
 const { BskyAgent } = bsky
 

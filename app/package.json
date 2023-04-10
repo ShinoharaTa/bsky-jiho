@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "@atproto/api": "^0.2.5",
-    "moment": "^2.29.4"
+    "moment-timezone": "^0.5.43"
   }
 }
