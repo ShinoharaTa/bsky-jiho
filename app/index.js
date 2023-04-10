@@ -31,9 +31,6 @@ const post = async function (text) {
 
 const result = await login();
 if (result) {
-    const waitTime = Math.floor(Math.random() * 300000);
-    setTimeout(() => {
-        const time = moment().tz('Asia/Tokyo').format('YYYY/MM/DD HH:mm:ss');
-        post("なう(" + time + ")");
-    }, waitTime);
+    const time = moment().tz('Asia/Tokyo').format('YYYY/MM/DD HH:mm:ss');
+    post("なう(" + time + ")");
 }
