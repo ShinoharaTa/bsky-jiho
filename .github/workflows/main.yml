@@ -20,6 +20,7 @@ jobs:
 
     - name: Install dependencies
       run: npm ci
+      working-directory: app
 
     # - name: Wait for a random duration
     #   run: |
@@ -30,7 +31,8 @@ jobs:
     #     fi
 
     - name: Run index.js
-      run: node app/index.js
+      run: node index.js
+      working-directory: app
       env:
         AUTHOR: ${{ secrets.AUTHOR }}
         PASSWORD: ${{ secrets.PASSWORD }}
