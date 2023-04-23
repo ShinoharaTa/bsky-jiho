@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 import bsky from "@atproto/api";
 import moment from "moment-timezone";
 
@@ -33,6 +33,9 @@ const post = async function (text) {
 
 const result = await login();
 if (result) {
-  const time = moment().tz("Asia/Tokyo").format("YYYY/MM/DD HH:mm:ss");
-  post("なう(" + time + ")");
+  const waitTime = Math.floor(Math.random() * 360000); // 0~300000ミリ秒（5分）のランダムな値
+  setTimeout(() => {
+    const time = moment().tz("Asia/Tokyo").format("YYYY/MM/DD HH:mm:ss");
+    post("なう(" + time + ")");
+  }, waitTime);
 }
